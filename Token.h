@@ -12,14 +12,14 @@ public:
 	}
 
 	void GenerateToken(std::string base = "abcdefghijklmnopqrtsuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ1234567890"){
-
-		char token[20];
+		char token[21];
 		srand(time(NULL));
-		uint len = base.length();
+		unsigned len = base.length()-1;
 		
 		for(char& pos : token){
-			pos = base[random()%len];
+			pos = base[rand()%len];
 		}
+		token[20]='\0';
 
 		value = token;
 	}

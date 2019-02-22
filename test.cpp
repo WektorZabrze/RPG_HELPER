@@ -1,10 +1,13 @@
 #include <iostream>
-#include "Player.h"
+#include "Game.h"
 #include "GameMaster.h"
 
 int main(){
-	Player a("Loniowsky", "Man","Poland");
-	GameMaster b("Test", "Test", "Test");
-	std::cout<<a.Describe(true)<<std::endl;
-	std::cout<<b.Describe(true)<<std::endl;
+	Game a = Game::NewGame();
+	GameMaster& gm = a.InitializeGmApi();
+	a.InitializePlayer();
+	a.InitializePlayer();
+	a.InitializePlayer();
+	gm.PerformAction();
+	return 0;
 }
